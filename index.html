@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kafeteria w Kamienicy | włoska kawa, bajgle i ciasta, Sobieskiego 38 w Rybniku</title>
+<meta name="description" content="Makieta strony Kafeterii w Kamienicy z Rybnika: włoska kawa, bajgle, sałatki, zapiekanki, ciasta i desery przy ul. Sobieskiego 38.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,800;1,6..96,500&family=Karla:wght@400;500;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+/* Kierunek: kamienica. Zielona ściana i ceglany czerwony z ich wnętrza, okno z szprosami za bułeczką, półki z witryny zamiast kart. */
+:root{
+  --teal:#17594f;
+  --teal-2:#0f4038;
+  --brick:#a9452b;
+  --brick-2:#8a3520;
+  --cream:#f6efe3;
+  --paper:#fffaf0;
+  --ink:#1d1a16;
+  --mute:#625b50;
+  --line:#d8cbb4;
+  --gut:clamp(20px,5vw,64px);
+  --hd:'Bodoni Moda',Georgia,serif;
+  --bd:'Karla','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--cream)}
+body{font-family:var(--bd);font-size:18px;line-height:1.6;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--brick);outline-offset:3px;border-radius:3px}
+h1,h2,h3{font-family:var(--hd);font-weight:800;line-height:.98;letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:2px;background:var(--brick);color:#fff;font:700 16px var(--bd);letter-spacing:.04em;text-decoration:none;border:2px solid var(--brick);cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--brick-2);border-color:var(--brick-2)}
+.btn.w{background:var(--cream);color:var(--teal-2);border-color:var(--cream)}
+.btn.w:hover{background:#fff}
+.btn.out{background:transparent;color:inherit;border-color:currentColor}
+.btn.out:hover{background:rgba(255,255,255,.12)}
+
+header{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:14px var(--gut);color:#fff;transition:background .2s,color .2s}
+header.solid{background:var(--cream);color:var(--ink);border-bottom:1px solid var(--line)}
+.brand{font:800 20px/1 var(--hd);text-decoration:none;font-style:italic}
+header nav{display:flex;gap:26px;font:500 15px var(--bd)}
+header nav a{text-decoration:none}
+header nav a:hover{text-decoration:underline}
+@media(max-width:560px){header nav .opt{display:none}}
+
+/* scena */
+.hero{position:relative;min-height:100vh;min-height:100svh;background:var(--teal);color:#fff;overflow:hidden}
+.win{position:absolute;right:clamp(10px,4vw,80px);top:50%;transform:translateY(-50%);width:min(40vw,520px);aspect-ratio:3/4.2;border:14px solid var(--cream);border-radius:200px 200px 6px 6px;background:linear-gradient(180deg,#0f4038,#1f6d60);box-shadow:inset 0 0 0 6px var(--teal-2)}
+.win::before,.win::after{content:"";position:absolute;background:var(--cream)}
+.win::before{left:50%;top:0;bottom:0;width:10px;transform:translateX(-50%)}
+.win::after{top:46%;left:0;right:0;height:10px}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:2}
+.lines{position:absolute;left:var(--gut);top:50%;transform:translateY(-62%);z-index:3;width:min(54vw,720px);height:clamp(260px,44vh,430px)}
+.l{position:absolute;left:0;top:0;width:100%;opacity:0;animation:show 12s infinite both}
+.l2{animation-delay:4s}.l3{animation-delay:8s}
+@keyframes show{0%{opacity:0;transform:translateY(36px)}5%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-36px)}}
+.l h1,.l h2{font-size:clamp(46px,7.6vw,118px);font-style:italic;font-weight:500}
+.l p{margin-top:18px;max-width:30ch;font-size:clamp(18px,1.6vw,23px);color:#cfe5df}
+.kicker{position:absolute;left:var(--gut);top:clamp(86px,14vh,120px);z-index:3;font:700 13px var(--bd);letter-spacing:.3em;text-transform:uppercase;color:#cfe5df}
+.cta{position:absolute;left:var(--gut);bottom:clamp(36px,9vh,80px);z-index:4;display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:820px){
+  .win{width:70vw;top:62%;right:50%;transform:translate(50%,-50%)}
+  .lines{width:calc(100% - 2*var(--gut));top:19%;transform:none;height:180px}
+  .l h1,.l h2{font-size:clamp(40px,12vw,76px)}
+}
+
+/* wstęga: dni tygodnia */
+.days{background:var(--brick);color:#fff;padding:22px 0;overflow:hidden}
+.days .row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;padding:0 var(--gut)}
+.days span{min-width:64px;text-align:center;font:700 15px var(--bd);letter-spacing:.14em;text-transform:uppercase;padding:10px 14px;border:2px solid rgba(255,255,255,.5);border-radius:999px}
+.days span.on{background:#fff;color:var(--brick);border-color:#fff;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.1)}}
+.days p{width:100%;text-align:center;margin-top:12px;font:italic 500 clamp(22px,2.6vw,34px)/1.2 var(--hd)}
+
+.sec{padding:clamp(64px,10vh,120px) 0}
+.sec h2{font-size:clamp(44px,7vw,100px);font-style:italic;font-weight:500}
+.lead{margin-top:14px;max-width:54ch;color:var(--mute)}
+
+/* półki */
+.shelves{margin-top:clamp(28px,5vh,50px);border-top:3px double var(--ink)}
+.shelf{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) auto;gap:var(--gut);align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.shelf h3{font-size:clamp(32px,4vw,52px);font-style:italic;font-weight:500}
+.shelf p{color:var(--mute);max-width:46ch}
+.shelf .tag{display:inline-block;margin-bottom:8px;font:700 12px var(--bd);letter-spacing:.14em;text-transform:uppercase;color:var(--brick)}
+.qty{display:flex;align-items:center}
+.qty button{width:46px;height:46px;border:2px solid var(--ink);background:transparent;font:700 22px var(--bd);cursor:pointer;line-height:1}
+.qty button:first-child{border-radius:2px 0 0 2px}.qty button:last-child{border-radius:0 2px 2px 0}
+.qty button:hover{background:var(--ink);color:#fff}
+.qty output{min-width:48px;height:46px;display:grid;place-items:center;border-block:2px solid var(--ink);font:700 18px var(--bd)}
+.ph{position:relative;display:none}
+@media(max-width:820px){.shelf{grid-template-columns:1fr;gap:12px;padding:22px 0}}
+
+/* zamówienie */
+.order{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);margin-top:clamp(28px,5vh,48px);align-items:start}
+@media(max-width:900px){.order{grid-template-columns:1fr}}
+.card{background:var(--teal);color:#fff;padding:clamp(22px,3vw,38px);border-radius:2px;position:sticky;top:84px}
+.card h3{font-size:36px;font-style:italic;font-weight:500;margin-bottom:14px}
+.card pre{white-space:pre-wrap;font:400 17px/1.65 var(--bd);min-height:190px}
+.card pre.h2{color:#a9cdc5}
+.acts{display:grid;gap:10px;margin-top:20px}
+.msg{min-height:22px;margin-top:10px;font-size:14px;color:#cfe5df}
+@media(max-width:900px){.card{position:static}}
+fieldset{border:0;margin-bottom:22px}
+legend,label.t{display:block;font:700 13px var(--bd);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;padding:0;color:var(--brick)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label{margin:0;padding:10px 18px;min-height:48px;display:inline-flex;align-items:center;border:2px solid var(--ink);border-radius:2px;cursor:pointer;font:500 16px var(--bd);background:#fff;color:var(--ink)}
+.seg input:checked+label{background:var(--ink);color:#fff}
+.seg input:focus-visible+label{outline:3px solid var(--brick);outline-offset:2px}
+input[type=text]{width:100%;min-height:52px;padding:0 16px;font:16px var(--bd);color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:2px}
+input[type=text]:focus{outline:3px solid var(--brick);outline-offset:1px}
+.fields{display:grid;gap:16px}
+
+.contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);margin-top:clamp(28px,5vh,48px)}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 26px}
+dt{font:700 13px var(--bd);letter-spacing:.14em;text-transform:uppercase;color:var(--brick);padding-top:6px}
+dd{font-size:20px}
+.map{border:3px solid var(--ink);min-height:400px;background:#e5dcc9}
+.map iframe{width:100%;height:100%;min-height:400px;border:0;display:block}
+footer{padding:36px 0 56px;border-top:1px solid var(--line)}
+footer p{max-width:80ch;font-size:14px;color:var(--mute)}
+@media(prefers-reduced-motion:reduce){.l{animation:none;opacity:0}.l1{opacity:1}.days span.on{animation:none}*{transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <a class="brand" href="#start">Kafeteria w Kamienicy</a>
+  <nav aria-label="Menu"><a class="opt" href="#oferta">Witryna</a><a href="#zamow">Zamów</a><a class="opt" href="#kontakt">Kontakt</a></nav>
+</header>
+
+<main>
+<section class="hero" id="start">
+  <div class="win" aria-hidden="true"></div>
+  <canvas id="cv" role="img" aria-label="Trójwymiarowa cynamonka z lukrem. Model wygenerowany komputerowo, nie zdjęcie z kawiarni."></canvas>
+  <div class="kicker">Rybnik · ul. Sobieskiego 38</div>
+  <div class="lines">
+    <div class="l l1"><h1>Włoska kawa, także bio.</h1><p>Na słodko i na słono, w samym centrum Rybnika.</p></div>
+    <div class="l l2"><h2>Bajgle, sałatki, zapiekanki.</h2><p>Na śniadanie, lunch albo obiad.</p></div>
+    <div class="l l3"><h2>Witryna pełna ciast.</h2><p>Ciasta i desery, a w środy rzemieślnicze cynamonki.</p></div>
+  </div>
+  <div class="cta"><a class="btn w" href="#zamow">Zamów na wynos</a><a class="btn out" href="#oferta">Zobacz, co mamy</a></div>
+</section>
+
+<section class="days" aria-label="Środy: dzień cynamonek">
+  <div class="row" id="days"></div>
+</section>
+
+<section class="sec" id="oferta">
+  <div class="wrap">
+    <h2>Z witryny i z kuchni</h2>
+    <p class="lead">Tak o sobie piszą: na słodko i na słono. Aktualne menu i ceny podaje kawiarnia, a tu dodajesz, co Cię kusi.</p>
+    <div class="shelves" id="shelves"></div>
+  </div>
+</section>
+
+<section class="sec" id="zamow" style="padding-top:0">
+  <div class="wrap">
+    <h2>Zamów na wynos</h2>
+    <p class="lead">Wybierz pozycje i godzinę odbioru. Po prawej powstaje gotowa wiadomość: wyślesz ją na WhatsApp, e-mailem albo zadzwonisz.</p>
+    <div class="order">
+      <div>
+        <fieldset><legend>Odbiór</legend><div class="seg" id="seg"></div></fieldset>
+        <div class="fields">
+          <div><label class="t" for="nt">Uwagi</label><input type="text" id="nt" placeholder="np. bajgiel bez cebuli" autocomplete="off"></div>
+          <div><label class="t" for="nm">Twoje imię</label><input type="text" id="nm" autocomplete="given-name"></div>
+        </div>
+      </div>
+      <aside class="card" aria-live="polite">
+        <h3>Twoja wiadomość</h3>
+        <pre id="pre" class="h2">Dodaj co najmniej jedną pozycję z listy powyżej, a tu pojawi się gotowa wiadomość.</pre>
+        <div class="acts">
+          <a class="btn w" id="wa" href="#" target="_blank" rel="noopener">Napisz na WhatsApp</a>
+          <a class="btn out" id="mail" href="#">Wyślij e-mailem</a>
+          <a class="btn out" href="tel:+48503849719">Zadzwoń: 503 849 719</a>
+          <button type="button" class="btn out" id="copy">Kopiuj wiadomość</button>
+        </div>
+        <div class="msg" id="msg" role="status"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kontakt" style="padding-top:0">
+  <div class="wrap">
+    <h2>Kontakt</h2>
+    <div class="contact">
+      <dl>
+        <dt>Adres</dt><dd>ul. Jana III Sobieskiego 38<br>44-200 Rybnik</dd>
+        <dt>Godziny</dt><dd>9:00–19:00 (tak podano w poście z 10 listopada, aktualne godziny potwierdza kawiarnia)</dd>
+        <dt>Telefon</dt><dd><a href="tel:+48503849719">503 849 719</a> (także WhatsApp)</dd>
+        <dt>E-mail</dt><dd><a href="mailto:shskawiarnia@gmail.com">shskawiarnia@gmail.com</a></dd>
+        <dt>Facebook</dt><dd><a href="https://www.facebook.com/sweethomerybnik/" rel="noopener">Kafeteria w Kamienicy – Rybnik</a></dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/kafeteria_w_kamienicy_rybnik/" rel="noopener">@kafeteria_w_kamienicy_rybnik</a></dd>
+      </dl>
+      <div class="map"><iframe title="Mapa: Kafeteria w Kamienicy, Sobieskiego 38, Rybnik" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=18.5340%2C50.0920%2C18.5550%2C50.1020&amp;layer=mapnik&amp;marker=50.0972321%2C18.5445159"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>To makieta nowej strony. Nie ma na niej zdjęć kawiarni: cynamonka na ekranie to model 3D wygenerowany komputerowo. W pełnej wersji pojawią się prawdziwe zdjęcia, menu z cenami i aktualne godziny otwarcia, za zgodą właścicieli. Teksty, adres i dane kontaktowe pochodzą z facebookowej strony Kafeterii w Kamienicy.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var hd=$('hd');
+var still=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);var t=id&&$(id);if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-(id==='start'?0:56),behavior:still?'auto':'smooth'})}});
+addEventListener('scroll',function(){hd.classList.toggle('solid',scrollY>40)},{passive:true});
+
+/* dni tygodnia: środa podświetlona (cynamonki co środę, z ich posta z 4 listopada) */
+var dn=['Pn','Wt','Śr','Cz','Pt','So','Nd'],dd=$('days');
+dd.innerHTML=dn.map(function(d,i){return '<span'+(i===2?' class="on"':'')+'>'+d+'</span>'}).join('')+'<p>Środy dzień cynamonek: miękkie, rzemieślnicze, idealne do kawy.</p>';
+
+/* 3D: lekka cynamonka, obraca się sama */
+var cv=$('cv'),ok=false,model=null,pivot,R,S,cam,ry=-.5;
+try{var tc=document.createElement('canvas');ok=!!(window.WebGLRenderingContext&&(tc.getContext('webgl')||tc.getContext('experimental-webgl')))&&window.THREE&&THREE.GLTFLoader}catch(e){}
+if(ok){
+ R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.outputEncoding=THREE.sRGBEncoding;
+ S=new THREE.Scene();cam=new THREE.PerspectiveCamera(30,1,.1,100);cam.position.set(0,0,8);
+ S.add(new THREE.AmbientLight(0xffffff,.75));
+ var k=new THREE.DirectionalLight(0xfff0d8,1.4);k.position.set(-3,5,5);S.add(k);
+ var r=new THREE.DirectionalLight(0xffc88a,.9);r.position.set(4,2,-4);S.add(r);
+ pivot=new THREE.Group();S.add(pivot);
+ new THREE.GLTFLoader().load('roll.glb',function(g){var m=g.scene,b=new THREE.Box3().setFromObject(m),sz=b.getSize(new THREE.Vector3()),ct=b.getCenter(new THREE.Vector3());var s=2.7/Math.max(sz.x,sz.y,sz.z);m.scale.setScalar(s);m.position.set(-ct.x*s,-ct.y*s,-ct.z*s);model=m;pivot.add(m);draw()});
+}
+function fit(){if(!ok)return;var w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;R.setSize(w,h,false);cam.aspect=w/h;cam.position.z=w/h<.8?10:8.4;cam.updateProjectionMatrix();draw()}
+if(ok){if(window.ResizeObserver)new ResizeObserver(fit).observe(cv);else addEventListener('resize',fit)}
+var vis=true;if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe($('start'));
+var sy=0;addEventListener('scroll',function(){sy=Math.min(1,scrollY/innerHeight)},{passive:true});
+function draw(){if(!model)return;var w=cv.clientWidth/cv.clientHeight,mob=w<.8;
+ pivot.rotation.y=ry;pivot.rotation.x=.55;pivot.scale.setScalar((mob?.68:1)*(1+sy*.1));
+ pivot.position.x=mob?0:(w>1.9?3.3:(w>1.3?2.5:1.7));pivot.position.y=(mob?-.15:0)-sy*.4;
+ R.render(S,cam)}
+var last=performance.now();
+(function loop(now){requestAnimationFrame(loop);var dt=Math.min(.05,(now-last)/1000);last=now;if(!still)ry+=dt*.5;if(vis)draw()})(last);
+
+/* półki i zamówienie (pozycje z opisu na ich Facebooku) */
+var items=[['Włoska kawa','także w wersji bio, napisz w uwagach jaka','Pyszna włoska kawa, również dostępna w wersji bio.',''],['Bajgle','z rozmaitymi dodatkami','Bajgle z rozmaitymi dodatkami, na śniadanie, lunch lub obiad.',''],['Sałatki','','Sałatki na lunch lub obiad.',''],['Zapiekanki','','Zapiekanki, na słono i na ciepło.',''],['Ciasta i desery','z witryny','Nasza witryna kusi pysznymi ciastami oraz deserami.',''],['Pancakes','na słodko','Idealne na śniadanie, deser albo wtedy, gdy masz ochotę na coś słodkiego.',''],['Cynamonki','w środy','Rzemieślnicze, miękkie, mega cynamonowe i idealne do kawy.','Środa']];
+var q=items.map(function(){return 0}),sh=$('shelves'),outs=[];
+items.forEach(function(it,i){var d=document.createElement('div');d.className='shelf';
+ d.innerHTML='<div>'+(it[3]?'<span class="tag">'+it[3]+'</span><br>':'')+'<h3>'+it[0]+'</h3></div><p>'+it[2]+'</p><div class="qty"><button type="button" aria-label="Mniej: '+it[0]+'">−</button><output>0</output><button type="button" aria-label="Więcej: '+it[0]+'">+</button></div>';
+ var bs=d.querySelectorAll('button'),o=d.querySelector('output');outs.push(o);
+ bs[0].onclick=function(){q[i]=Math.max(0,q[i]-1);o.textContent=q[i];calc()};
+ bs[1].onclick=function(){q[i]=Math.min(9,q[i]+1);o.textContent=q[i];calc()};sh.appendChild(d)});
+var times=['jak najszybciej','za 15 minut','za 30 minut','za godzinę'],seg=$('seg');
+times.forEach(function(t,i){var id='t'+i;seg.insertAdjacentHTML('beforeend','<input type="radio" name="tm" id="'+id+'" value="'+t+'"'+(i===0?' checked':'')+'><label for="'+id+'">'+t+'</label>')});
+function when(){var c=document.querySelector('input[name=tm]:checked');return c?c.value:times[0]}
+function txt(){var L=['Dzień dobry,','','proszę o przygotowanie na odbiór:'],n=0;
+ items.forEach(function(it,i){if(q[i]){L.push('• '+it[0]+' × '+q[i]);n+=q[i]}});
+ L.push('','Odbiór: '+when());var nt=$('nt').value.trim();if(nt)L.push('Uwagi: '+nt);var nm=$('nm').value.trim();L.push('','Pozdrawiam'+(nm?', '+nm:''));return {n:n,s:L.join('\n')}}
+function calc(){var r=txt(),pre=$('pre');
+ pre.textContent=r.n?r.s:'Dodaj co najmniej jedną pozycję z listy powyżej, a tu pojawi się gotowa wiadomość.';pre.classList.toggle('h2',!r.n);
+ $('mail').href='mailto:shskawiarnia@gmail.com?subject='+encodeURIComponent('Zamówienie na odbiór')+'&body='+encodeURIComponent(r.s);
+ $('wa').href='https://wa.me/48503849719?text='+encodeURIComponent(r.s)}
+['nm','nt'].forEach(function(i){$(i).addEventListener('input',calc)});seg.addEventListener('change',calc);
+$('copy').addEventListener('click',function(){var m=$('msg'),r=txt();if(!r.n){m.textContent='Najpierw dodaj pozycję.';return}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(r.s).then(function(){m.textContent='Skopiowano. Wklej w wiadomość do kawiarni.'},function(){m.textContent='Nie udało się skopiować. Zaznacz tekst ręcznie.'})}else{m.textContent='Nie udało się skopiować. Zaznacz tekst ręcznie.'}});
+['mail','wa'].forEach(function(i){$(i).addEventListener('click',function(e){if(!txt().n){e.preventDefault();$('msg').textContent='Najpierw dodaj pozycję.'}})});
+calc();
+})();
+</script>
+<script data-goatcounter="https://penia-demo.goatcounter.com/count" data-goatcounter-settings='{"path":"kafeteria-kamienica"}' async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
